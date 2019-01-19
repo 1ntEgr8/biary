@@ -10,7 +10,7 @@ const DataSchema = new Schema(
     text: String, 
     wordcount: Number,
     mostcommonword: String, 
-    sentiment, String, 
+    sentiment: String, 
     usersentiment: String, 
     username: String
   },

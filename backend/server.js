@@ -3,10 +3,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const Data = require("./data");
+const cors = require('cors');
 
 const API_PORT = 3001;
 const app = express();
 const router = express.Router();
+app.use(cors()); 
 
 // this is our MongoDB database
 const dbRoute = "mongodb://jpaden:Theking1@ds159574.mlab.com:59574/sampledb";
@@ -53,6 +55,11 @@ router.post("/updateData", (req, res) => {
 // this method removes existing data in our database
 router.delete("/deleteData", (req, res) => {
   const { id } = req.body;
+  console.log(req.body); 
+  Data.find({ 
+
+  })
+
   Data.findOneAndDelete(id, err => {
     if (err) return res.send(err);
     return res.json({ success: true });
@@ -66,7 +73,9 @@ router.post("/putData", (req, res) => {
 
   const { id, message } = req.body;
 
-  if ((!id && id !== 0) || !message) {
+  /*if ((!id && id !== 0) || !message) {
+    */
+  if (!message) {
     return res.json({
       success: false,
       error: "INVALID INPUTS"

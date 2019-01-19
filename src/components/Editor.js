@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios'; 
 
 class Editor extends Component{
   constructor(props) {
@@ -17,6 +18,20 @@ class Editor extends Component{
 
   handleSubmit(event) {
     console.log(this.state.value);
+    let dbEntry = {
+      message: this.state.value, 
+      name: "THIS IS A MESSAGE"
+    }
+    axios.post('http://localhost:3001/api/putData', dbEntry)
+      .then(res => console.log(res.data));
+
+    /*axios.get('http://localhost:3001/api/getData')
+      .then(res => {
+        let entries = res.data; 
+        console.log(res); 
+      })
+      */
+
     event.preventDefault();
   }
 
