@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios'; 
+import WebcamCapture from './WebcamCapture';
 
 class Editor extends Component{
   constructor(props) {
@@ -31,17 +32,16 @@ class Editor extends Component{
         console.log(res); 
       })
       */
-
-    event.preventDefault();
   }
 
   render() {
     return (
       <div className="container">
-        <form onSubmit={this.handleSubmit}>
+      <WebcamCapture />
+        <form onSubmit={this.handleSubmit} method='POST'>
           <div className="form-group">
             <textarea value={this.state.value} onChange={this.handleChange} className="form-control mt-4" placeholder="Write away!" style={{height: '40rem'}}/>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Post" className="btm btn-primary"/>
           </div>
         </form>
       </div>
