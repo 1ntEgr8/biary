@@ -4,7 +4,7 @@ class Editor extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      value: 'Please write an essay about your favorite DOM element.'
+      value: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -22,13 +22,14 @@ class Editor extends Component{
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Essay:
-          <textarea value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div className="container">
+        <form onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <textarea value={this.state.value} onChange={this.handleChange} className="form-control mt-4" placeholder="Write away!" style={{height: '40rem'}}/>
+            <input type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
     );
   }
 }
