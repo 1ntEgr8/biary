@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
 
+const style = {
+	alignment: 'center'
+	
+}
+
 class Journal extends Component{
   render(){
     let diaryViews = [];

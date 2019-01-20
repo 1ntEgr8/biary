@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+wimport React, {Component} from 'react';
 import Header from './components/Header';
 import Editor from './components/Editor';
 import Analysis from './components/Analysis';
