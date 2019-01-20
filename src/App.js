@@ -52,6 +52,11 @@ class App extends Component{
         </div>
       </div>
     </HashRouter>
+    <div className="jumbotron bg-primary mb-0">
+      <div className="d-flex justify-content-center text-white">
+      <h3>Made with <img src='assets/heart.png'/>, 🥤, and 😂</h3>
+      </div>
+    </div>
     </div>
     );
   }

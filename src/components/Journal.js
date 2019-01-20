@@ -56,8 +56,12 @@ class Journal extends Component{
     //   })
 		// }
     return(
-      <div class='container pt-4'>
-      <em><h1 className='d-flex justify-content-center pb-4'>Your Biary</h1></em>
+      <div>
+				<div className='jumbotron bg-info'>
+					<div className='d-flex justify-content-center text-white'>
+					<h1>Your Biary</h1>
+					</div>
+				</div>
 			<p>{diaryViews}</p>
      </div>
     );

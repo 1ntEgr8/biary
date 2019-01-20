@@ -1,5 +1,11 @@
 import React, {Component} from 'react';
 import Card from './Card';
+import {
+  Route,
+  NavLink,
+  HashRouter
+} from 'react-router-dom';
+
 
 class Header extends Component {
   cardData = [
@@ -23,13 +29,13 @@ class Header extends Component {
   render() {
     return (
       <div>
-      <div className="jumbotron">
-        <h1 className="display-4 d-flex justify-content-center">Biary</h1>
-        <p className="lead d-flex justify-content-center">Let your thoughts help you</p>
+      <div className="jumbotron" style={{backgroundColor: "cyan"}}>
+        <h1 className="display-4 d-flex justify-content-center text-muted" style={{fontWeight: "bold"}}>Biary</h1>
+        <p className="lead d-flex justify-content-center">Let your emotions run loose</p>
         <hr className="my-4 "/>
           <p className='d-flex justify-content-center'></p>
           <div className='container col-2'>
-          <a className="btn btn-danger d-flex justify-content-center" href="#" role="button">Get Started</a>
+          <NavLink to="/editor" className="btn btn-danger d-flex justify-content-center" role="button">Get Started</NavLink>
           </div>
       </div>
       <div className='d-flex'>
