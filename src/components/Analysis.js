@@ -9,8 +9,8 @@ class Analysis extends Component{
       <Plot
         data={[
           {
-            x: [1, 2, 3],
-            y: [2, 6, 3],
+            //x: [1, 2, 3] data from Google Cloud services,
+            //y: [2, 6, 3] data from Google Clouod services,
             type: 'scatter',
             mode: 'lines+points',
             marker: {color: 'red'},
@@ -24,7 +24,7 @@ class Analysis extends Component{
             xaxis: {
                 title: 'Day of the Year',
                 titlefont: {
-                family: 'Helvetica neue, bold',
+                family: 'Arial, bold',
                 size: 14,
                 color: '#7f7f7f'
                             }
@@ -32,7 +32,7 @@ class Analysis extends Component{
             yaxis: {
                 title: 'Feeling Score',
                 titlefont: {
-                family: 'Helvetica neue, bold',
+                family: 'Arial, bold',
                 size: 14,
                 color: '#7f7f7f'
                           }
