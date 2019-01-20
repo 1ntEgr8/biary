@@ -32,7 +32,7 @@ class Editor extends Component{
     axios.post('http://localhost:3001/api/putData', this.dbEntry)
       .then(res => console.log(res.data));
     console.log(this.dbEntry);
-  
+
     let webCam = document.getElementById('webcam');
     webCam.style.display = 'none';
     let formId = document.getElementById('journal');
@@ -82,9 +82,8 @@ class Editor extends Component{
             <div className='container mt-4 d-flex justify-content-center'>
             <input type="submit" value="Post" className="btn btn-success btn-large pr-5 pl-5 "/>
             </div>
-          </div>
-        </form>
-        <h1 style={{visibility:'hidden'}} id='success'>WOO HOOO</h1>
+          </form>
+          <h1 style={{visibility:'hidden'}} id='success'>WOO HOOO</h1>
       </div>
     );
   }
