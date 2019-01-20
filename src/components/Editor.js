@@ -29,15 +29,10 @@ class Editor extends Component{
     event.preventDefault();
     console.log("I have reached this part and am putting stuff onto the database");
     this.dbEntry.message = this.state.value;
-    /*axios.post('http://localhost:3001/api/putData', this.dbEntry)
-      .then(res => console.log(res.data));*/
+    axios.post('http://localhost:3001/api/putData', this.dbEntry)
+      .then(res => console.log(res.data));
     console.log(this.dbEntry);
-    axios.get('http://localhost:3001/api/getData')
-      .then(res => {
-        let entries = res.data;
-        console.log(entries);
-      })
-
+  
     let webCam = document.getElementById('webcam');
     webCam.style.display = 'none';
     let formId = document.getElementById('journal');
