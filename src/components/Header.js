@@ -33,11 +33,12 @@ class Header extends Component {
           </div>
       </div>
       <div className='d-flex'>
-      <Card data={this.cardData[0]}/>
-      <Card data={this.cardData[1]}/>
-      <Card data={this.cardData[2]}/>
+        <Card data={this.cardData[0]}/>
+        <Card data={this.cardData[1]}/>
+        <Card data={this.cardData[2]}/>
       </div>
-    </div>
+        <p style={{textAlign: 'center'}}>(C) The Biarrhea Organization</p>
+      </div>
       );
   }
 }
