@@ -50,6 +50,7 @@ class Editor extends Component{
                 });
             });
       });
+
   }
 
   setRef = webcam => {
@@ -94,7 +95,9 @@ class Editor extends Component{
                       </div>
                   </div>
                 </form>
-            <h1 style={{visibility:'hidden'}} id='success'>WOO HOOO</h1>
+            <div className='alert alert-success' role='alert' style={{visibility:'hidden'}}>
+            <h1 id='success'><a href='https://github.com/1ntEgr8'>WOO HOOO</a></h1>
+            </div>
       </div>
     );
   }

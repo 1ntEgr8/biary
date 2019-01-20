@@ -5,6 +5,7 @@ const logger = require("morgan");
 const Data = require("./data");
 const cors = require('cors');
 const language = require('@google-cloud/language');
+const vision = require('@google-cloud/vision');
 
 const API_PORT = 3001;
 const app = express();
@@ -14,6 +15,7 @@ app.use(cors());
 // this is our MongoDB database
 const dbRoute = "mongodb://jpaden:Theking1@ds159574.mlab.com:59574/sampledb";
 const nlpClient = new language.LanguageServiceClient();
+const visionClient = new vision.ImageAnnotatorClien()l;
 
 // connects our back end code with the database
 mongoose.connect(
@@ -113,7 +115,10 @@ router.post("/analyzeSentiment", (req, res) => {
              sentiment: sentiment.score
          });
      });
+
+
 })
+
 
 // append /api for our http requests
 app.use("/api", router);
