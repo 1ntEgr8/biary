@@ -93,11 +93,8 @@ class Analysis extends Component{
         }
       />
   </div>
-  <div onMouseEnter={checkMessage} id="good" class='jumbotron alert alert-info' style={{visibility:'hidden'}}>
-    <h1>WOO HOO!!! It looks like your'e doing grrrrreat</h1>
-    <h3>Keep up the good work!</h3>
-  </div>
-  <div id="bad" class='jumbotron alert alert-info' style={{visibility:'hidden'}}>
+
+  <div id="bad" class='jumbotron alert alert-danger mt-4'>
     <h1>Looks like you've not been doing so well lately...</h1>
     <h3>Has something been bothering you?</h3>
     <hr/>
