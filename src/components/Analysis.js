@@ -29,6 +29,8 @@ class Analysis extends Component{
       xlist.push(index+1);
       sentimentList.push(messages[index]['sentiment']);
     })
+
+    function checkMessage(){
     let good = true;
     for(let i = sentimentList.length; i>sentimentList-6; i--){
       if(sentimentList[i] > 0){
@@ -46,6 +48,7 @@ class Analysis extends Component{
       goodMessage.style.display='none';
       badMessage.style.visibility='visible';
     }
+  }
 
     return(
       <div>
@@ -90,7 +93,7 @@ class Analysis extends Component{
         }
       />
   </div>
-  <div id="good" class='jumbotron alert alert-info' style={{visibility:'hidden'}}>
+  <div onMouseEnter={checkMessage} id="good" class='jumbotron alert alert-info' style={{visibility:'hidden'}}>
     <h1>WOO HOO!!! It looks like your'e doing grrrrreat</h1>
     <h3>Keep up the good work!</h3>
   </div>
