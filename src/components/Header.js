@@ -5,15 +5,19 @@ class Header extends Component {
   cardData = [
     {
       title:'Keep a Biary',
-      text:'Recount what you did, as well as your thoughts and feelings throughout the day. Record your physical and mental well-being. Take this time to reflect on your day. Grab a cup of warm tea, and just start writing!'
+      text:'Recount what you did, as well as your thoughts and feelings throughout the day. Record your physical and mental well-being. Take this time to reflect on your day. Grab a cup of warm tea, and just start writing!',
+      image: 'assets/biary.png'
     },
     {
       title:'Selfie Everyday',
-      text:'Snap a picture of yourself along with your biary entry. You can snap a picture in the app itself through the webcam, or you can upload pictures from earlier in the day.'
+      text:'Snap a picture of yourself along with your biary entry. You can snap a picture in the app itself through the webcam, or you can upload pictures from earlier in the day.',
+      image: 'assets/selfie.png'
     },
     {
       title:'Be your best, All the Time',
-      text:"We'll take the data from your biary entries and generate a graph showing how your mood fluctuates over time. With this information, you can pinpoint times of high stress within your week or month and plan accordingly"
+      text:"We'll take the data from your biary entries and generate a graph showing how your mood fluctuates over time. With this information, you can pinpoint times of high stress within your week or month and plan accordingly",
+      image: 'assets/best.png'
+
     }
   ]
   render() {
