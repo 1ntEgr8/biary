@@ -5,12 +5,18 @@ const Schema = mongoose.Schema;
 // this will be our data base's data structure
 const DataSchema = new Schema(
   {
-    message: String,
+    message: {
+        type: String,
+        required: true
+    },
     user: String,
     text: String,
     wordcount: Number,
     mostcommonword: String,
-    sentiment: String,
+    sentiment: {
+        type: Number,
+        required: true
+    },
     usersentiment: String,
     username: String,
     image: String
