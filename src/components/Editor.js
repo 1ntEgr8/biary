@@ -20,36 +20,41 @@ class Editor extends Component{
   };
 
   handleSubmit(event) {
+    console.log(this.state.value);
+    let dbEntry = {
+      message: this.state.value, 
+      user: "President Peterson" 
+    }
+
     event.preventDefault();
     console.log("I have reached this part and am putting stuff onto the database");
     this.dbEntry.message = this.state.value;
-    axios.post('http://localhost:3001/api/putData', this.dbEntry)
-      .then(res => console.log(res.data));
+    /*axios.post('http://localhost:3001/api/putData', this.dbEntry)
+      .then(res => console.log(res.data));*/
     console.log(this.dbEntry);
-    /*axios.get('http://localhost:3001/api/getData')
+    axios.get('http://localhost:3001/api/getData')
       .then(res => {
         let entries = res.data;
-        console.log(res);
+        console.log(entries);
       })
-      */
-      let webCam = document.getElementById('webcam');
-      webCam.style.display = 'none';
-      let formId = document.getElementById('journal');
-      formId.style.display='none';
-      let success = document.getElementById('success');
-      success.style.visibility='visible';
 
-    };
+    let webCam = document.getElementById('webcam');
+    webCam.style.display = 'none';
+    let formId = document.getElementById('journal');
+    formId.style.display='none';
+    let success = document.getElementById('success');
+    success.style.visibility='visible';
+  }
 
-    setRef = webcam => {
-      this.webcam = webcam;
-    };
+  setRef = webcam => {
+    this.webcam = webcam;
+  };
 
-    capture = () => {
-      this.imageSrc = this.webcam.getScreenshot();
-      console.log('reached here');
-      this.dbEntry.image = this.imageSrc;
-    };
+  capture = () => {
+    this.imageSrc = this.webcam.getScreenshot();
+    console.log('reached here');
+    this.dbEntry.image = this.imageSrc;
+  };
 
   render() {
     const videoConstraints = {
@@ -60,8 +65,12 @@ class Editor extends Component{
 
     return (
       <div className="container">
+<<<<<<< HEAD
       <div id='webcam'>
       <div className='d-flex justify-content-center mb-0'>
+=======
+      <div id="webcam">
+>>>>>>> 26a80a000954b7e319b370ad93c41b4a406ef9dd
       <Webcam
         audio={false}
         height={350}

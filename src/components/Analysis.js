@@ -4,7 +4,6 @@ import Plot from 'react-plotly.js';
 class Analysis extends Component{
   render(){
     return(
-      <div>
       <Plot
         data={[
           {
@@ -23,23 +22,22 @@ class Analysis extends Component{
             xaxis: {
                 title: 'Day of the Year',
                 titlefont: {
-                family: 'Arial, bold',
-                size: 14,
-                color: '#7f7f7f'
-                            }
-                        },
+                  family: 'Arial, bold',
+                  size: 14,
+                  color: '#7f7f7f'
+                }
+            },
             yaxis: {
                 title: 'Feeling Score',
                 titlefont: {
-                family: 'Arial, bold',
-                size: 14,
-                color: '#7f7f7f'
-                          }
+                  family: 'Arial, bold',
+                  size: 14,
+                  color: '#7f7f7f'
+                }
             }
           }
         }
       />
-      </div>
     );
   }
 }
