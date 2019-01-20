@@ -29,7 +29,7 @@ class Header extends Component {
   render() {
     return (
       <div>
-      <div className="jumbotron" style={{backgroundColor: "cyan"}}>
+      <div className="jumbotron" style={{backgroundColor: "white"}}>
         <h1 className="display-4 d-flex justify-content-center text-muted" style={{fontWeight: "bold"}}>Biary</h1>
         <p className="lead d-flex justify-content-center">Let your emotions run loose</p>
         <hr className="my-4 "/>
