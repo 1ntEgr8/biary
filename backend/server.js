@@ -4,14 +4,16 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const Data = require("./data");
 const cors = require('cors');
+const language = require('@google-cloud/language');
 
 const API_PORT = 3001;
 const app = express();
 const router = express.Router();
-app.use(cors()); 
+app.use(cors());
 
 // this is our MongoDB database
 const dbRoute = "mongodb://jpaden:Theking1@ds159574.mlab.com:59574/sampledb";
+const nlpClient = new language.LanguageServiceClient();
 
 // connects our back end code with the database
 mongoose.connect(
@@ -55,8 +57,8 @@ router.post("/updateData", (req, res) => {
 // this method removes existing data in our database
 router.delete("/deleteData", (req, res) => {
   const { id } = req.body;
-  console.log(req.body); 
-  Data.find({ 
+  console.log(req.body);
+  Data.find({
 
   })
 
@@ -88,6 +90,29 @@ router.post("/putData", (req, res) => {
     return res.json({ success: true });
   });
 });
+
+router.post("/analyzeSentiment", (req, res) => {
+    const diaryPost = req.body.text;
+    console.log(diaryPost);
+
+    const document = {
+        content: diaryPost,
+        type: "PLAIN_TEXT"
+    };
+
+    nlpClient
+      .analyzeSentiment({ document: document })
+      .then(results => {
+          const sentiment = results[0].documentSentiment;
+
+          console.log(`Sentiment score: ${sentiment.score}`);
+          console.log(`Sentiment magnitude: ${sentiment.magnitude}`);
+
+          return res.json({
+             sentiment: sentiment.score
+         });
+     });
+})
 
 // append /api for our http requests
 app.use("/api", router);

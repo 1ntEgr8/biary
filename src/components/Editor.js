@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import axios from 'axios'; 
+import axios from 'axios';
 import WebcamCapture from './WebcamCapture';
 
 class Editor extends Component{
@@ -19,26 +19,35 @@ class Editor extends Component{
 
   handleSubmit(event) {
     console.log(this.state.value);
-    let dbEntry = {
-      message: this.state.value, 
-      name: "THIS IS A MESSAGE"
-    }
-    axios.post('http://localhost:3001/api/putData', dbEntry)
-      .then(res => console.log(res.data));
 
-    /*axios.get('http://localhost:3001/api/getData')
+    axios.post('http://localhost:3001/api/analyzeSentiment', { "text": this.state.value })
       .then(res => {
-        let entries = res.data; 
-        console.log(res); 
-      })
-      */
+          let dbEntry = {
+            message: this.state.value,
+            name: "THIS IS A MESSAGE",
+            sentiment: res.data.sentiment
+          }
+
+          console.log(dbEntry);
+
+          axios.post('http://localhost:3001/api/putData', dbEntry)
+            .then(res => {
+                console.log(res.data)
+
+                axios.get('http://localhost:3001/api/getData')
+                  .then(res => {
+                    let entries = res.data;
+                    console.log(res);
+                });
+            });
+      });
   }
 
   render() {
     return (
       <div className="container">
       <WebcamCapture />
-        <form onSubmit={this.handleSubmit} method='POST'>
+        <form onSubmit={this.handleSubmit} action="#">
           <div className="form-group">
             <textarea value={this.state.value} onChange={this.handleChange} className="form-control mt-4" placeholder="Write away!" style={{height: '40rem'}}/>
             <input type="submit" value="Post" className="btm btn-primary"/>
