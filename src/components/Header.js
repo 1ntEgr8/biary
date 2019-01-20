@@ -8,12 +8,12 @@ class Header extends Component {
       text:'Recount what you did, as well as your thoughts and feelings throughout the day. Record your physical and mental well-being. Take this time to reflect on your day. Grab a cup of warm tea, and just start writing!'
     },
     {
-      title:'asdfa',
-      text:'adfa'
+      title:'Selfie Everyday',
+      text:'Snap a picture of yourself along with your biary entry. You can snap a picture in the app itself through the webcam, or you can upload pictures from earlier in the day.'
     },
     {
-      title:'afja',
-      text:'wigj'
+      title:'Be your best, All the Time',
+      text:"We'll take the data from your biary entries and generate a graph showing how your mood fluctuates over time. With this information, you can pinpoint times of high stress within your week or month and plan accordingly"
     }
   ]
   render() {
@@ -21,9 +21,9 @@ class Header extends Component {
       <div>
       <div className="jumbotron">
         <h1 className="display-4 d-flex justify-content-center">Biary</h1>
-        <p className="lead d-flex justify-content-center">Some cool tagline</p>
+        <p className="lead d-flex justify-content-center">Let your thoughts help you</p>
         <hr className="my-4 "/>
-          <p className='d-flex justify-content-center'>Add some instructions</p>
+          <p className='d-flex justify-content-center'></p>
           <div className='container col-2'>
           <a className="btn btn-danger d-flex justify-content-center" href="#" role="button">Get Started</a>
           </div>
