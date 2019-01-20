@@ -22,8 +22,8 @@ class Editor extends Component{
   handleSubmit(event) {
     console.log(this.state.value);
     let dbEntry = {
-      message: this.state.value, 
-      user: "President Peterson" 
+      message: this.state.value,
+      user: "President Peterson"
     }
 
     event.preventDefault();
@@ -65,12 +65,8 @@ class Editor extends Component{
 
     return (
       <div className="container">
-<<<<<<< HEAD
       <div id='webcam'>
       <div className='d-flex justify-content-center mb-0'>
-=======
-      <div id="webcam">
->>>>>>> 26a80a000954b7e319b370ad93c41b4a406ef9dd
       <Webcam
         audio={false}
         height={350}
