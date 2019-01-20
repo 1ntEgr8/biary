@@ -15,7 +15,6 @@ app.use(cors());
 // this is our MongoDB database
 const dbRoute = "mongodb://jpaden:Theking1@ds159574.mlab.com:59574/sampledb";
 const nlpClient = new language.LanguageServiceClient();
-const visionClient = new vision.ImageAnnotatorClien()l;
 
 // connects our back end code with the database
 mongoose.connect(
