@@ -11,6 +11,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
+    "daemon": "github:zipang/daemon.node#48d0977c26fb3a6a44ae99aae3471b9d5a761085",
     "express": "^4.16.4",
     "mongoose": "^5.4.5",
     "morgan": "^1.9.1"
