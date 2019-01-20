@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Editor from './components/Editor';
 import Analysis from './components/Analysis';
 import Journal from './components/Journal';
+import Card from './components/Card';
 
 import {
   Route,
@@ -11,8 +12,10 @@ import {
 } from 'react-router-dom';
 
 class App extends Component{
+
   render(){
     return(
+      <div>
     <HashRouter>
       <div classNameName="container">
         <nav className="navbar navbar-expand-lg navbar-light bg-primary">
@@ -49,6 +52,7 @@ class App extends Component{
         </div>
       </div>
     </HashRouter>
+    </div>
     );
   }
 }
