@@ -43,7 +43,7 @@ class Header extends Component {
         <Card data={this.cardData[1]}/>
         <Card data={this.cardData[2]}/>
       </div>
-        <p style={{textAlign: 'center'}}>(C) The Biarrhea Organization</p>
+        <p style={{textAlign: 'center', color:'white'}}>(C) The Biarrhea Organization</p>
       </div>
       );
   }
