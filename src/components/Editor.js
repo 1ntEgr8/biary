@@ -4,6 +4,7 @@ import Webcam from "react-webcam";
 
 class Editor extends Component{
   dbEntry = {};
+  imageSrc = '';
 
   constructor(props) {
     super(props);
@@ -32,15 +33,13 @@ class Editor extends Component{
 
     axios.post('http://localhost:3001/api/analyzeSentiment', { "text": this.state.value })
       .then(res => {
-          let dbEntry = {
-            message: this.state.value,
-            name: "THIS IS A MESSAGE",
-            sentiment: res.data.sentiment
-          }
+          this.dbEntry.message = this.state.value;
+          this.dbEntry.name = "Bud Peterson";
+          this.dbEntry.sentiment = res.data.sentiment;
 
-          console.log(dbEntry);
-
-          axios.post('http://localhost:3001/api/putData', dbEntry)
+          console.log(this.dbEntry);
+          console.log('dbEntry^');
+          axios.post('http://localhost:3001/api/putData', this.dbEntry)
             .then(res => {
                 console.log(res.data)
 

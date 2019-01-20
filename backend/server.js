@@ -85,6 +85,7 @@ router.post("/putData", (req, res) => {
 
   data.message = req.body.message;
   data.sentiment = req.body.sentiment;
+  data.image = req.body.image;
   data.save(err => {
     if (err) return res.json({ success: false, error: err });
     return res.json({ success: true });

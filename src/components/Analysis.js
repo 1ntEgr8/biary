@@ -2,13 +2,40 @@ import React, {Component} from 'react';
 import Plot from 'react-plotly.js';
 
 class Analysis extends Component{
+  constructor(props){
+      super(props);
+
+      this.state = {
+        messages: []
+      };
+  };
+
+  componentDidMount(){
+    fetch('http://localhost:3001/api/getData')
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data)
+      this.setState({
+        messages: data['data']
+      })
+    })
+  }
+
   render(){
+    const {messages} = this.state;
+    let xlist = [];
+    let sentimentList = [];
+
+    messages.map((data, index)=>{
+      xlist.push(index+1);
+      sentimentList.push(messages[index]['sentiment']);
+    })
     return(
       <Plot
         data={[
           {
-            //x: [1, 2, 3] data from Google Cloud services,
-            //y: [2, 6, 3] data from Google Clouod services,
+            x: xlist,
+            y: sentimentList,
             type: 'scatter',
             mode: 'lines+points',
             marker: {color: 'red'},
@@ -20,7 +47,7 @@ class Analysis extends Component{
             padding: 0,
             title: 'Graph',
             xaxis: {
-                title: 'Day of the Year',
+                title: 'Entry number',
                 titlefont: {
                   family: 'Arial, bold',
                   size: 14,

@@ -26,15 +26,19 @@ class Journal extends Component{
 		const {messages} = this.state;
 
 		let diaryViews = [];
-
+		console.log(messages[5]);
 		messages.map((data, index)=>{
 			diaryViews.push(
-				<div>
-				<h1>Journal {index+1}</h1>
-				<small>{messages[index]['createdAt'].substring(0,10)}</small>
-				<p>{messages[index]['message']}</p>
-				<img src={messages[index]['']}/>
+				<div className='container mb-4'>
+					<div className="card" >
+						<div className='card-body'>
+							<img src={messages[index]['image']} className='mb-3'/>
+							<h5 className='card-title'>Journal {index+1}</h5>
+							<h6 className='card-subtitle mb-2 text-muted'>{messages[index]['createdAt'].substring(0,10)}</h6>
+							<p className='card-text'>{messages[index]['message']}</p>
+						</div>
 				</div>
+			</div>
 			)
 		})
 		// function getViews(){
@@ -51,8 +55,8 @@ class Journal extends Component{
     //   })
 		// }
     return(
-      <div>
-      <h1>Journal view page</h1>
+      <div class='container pt-4'>
+      <em><h1 className='d-flex justify-content-center pb-4'>Your Biary</h1></em>
 			<p>{diaryViews}</p>
      </div>
     );
