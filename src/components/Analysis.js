@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
+import Plot from 'react-plotly.js';
 
 class Analysis extends Component{
   render(){
     return(
-
+      <div>
       <Plot
         data={[
           {
