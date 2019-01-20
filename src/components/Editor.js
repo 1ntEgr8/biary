@@ -60,19 +60,20 @@ class Editor extends Component{
 
     return (
       <div className="container">
-      <div id='webcam'>
-      <div className='d-flex justify-content-center mb-0'>
-      <Webcam
-        audio={false}
-        height={350}
-        ref={this.setRef}
-        screenshotFormat="image/jpeg"
-        width={500}
-        videoConstraints={videoConstraints}
-      />
-      </div>
-      <div className='d-flex justify-content-center'>
-      <button className='btn btn-info' onClick={this.capture}>Capture photo</button>
+        <div id='webcam'>
+          <div className='d-flex justify-content-center mb-0'>
+            <Webcam
+              audio={false}
+              height={350}
+              ref={this.setRef}
+              screenshotFormat="image/jpeg"
+              width={500}
+              videoConstraints={videoConstraints}
+            />
+          </div>
+        <div className='d-flex justify-content-center'>
+          <button className='btn btn-info' onClick={this.capture}>Capture photo</button>
+        </div>
       </div>
       </div>
 
@@ -84,6 +85,7 @@ class Editor extends Component{
             </div>
           </form>
           <h1 style={{visibility:'hidden'}} id='success'>WOO HOOO</h1>
+      </div>
       </div>
     );
   }
