@@ -36,6 +36,7 @@ class Journal extends Component{
 							<h5 className='card-title'>Journal {index+1}</h5>
 							<h6 className='card-subtitle mb-2 text-muted'>{messages[index]['createdAt'].substring(0,10)}</h6>
 							<p className='card-text'>{messages[index]['message']}</p>
+							<p className='card-subtitle text-muted'>Sentiment value: {messages[index].sentiment}</p>
 						</div>
 				</div>
 			</div>
