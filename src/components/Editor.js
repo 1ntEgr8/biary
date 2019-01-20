@@ -21,24 +21,24 @@ class Editor extends Component{
     console.log(this.state.value);
     let dbEntry = {
       message: this.state.value, 
-      name: "THIS IS A MESSAGE"
+      user: "President Peterson" 
     }
     axios.post('http://localhost:3001/api/putData', dbEntry)
       .then(res => console.log(res.data));
 
-    /*axios.get('http://localhost:3001/api/getData')
+    axios.get('http://localhost:3001/api/getData')
       .then(res => {
         let entries = res.data; 
         console.log(res); 
       })
-      */
+      
   }
 
   render() {
     return (
       <div className="container">
       <WebcamCapture />
-        <form onSubmit={this.handleSubmit} method='POST'>
+        <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <textarea value={this.state.value} onChange={this.handleChange} className="form-control mt-4" placeholder="Write away!" style={{height: '40rem'}}/>
             <input type="submit" value="Post" className="btm btn-primary"/>

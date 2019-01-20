@@ -35,6 +35,7 @@ app.use(logger("dev"));
 // this is our get method
 // this method fetches all available data in our database
 router.get("/getData", (req, res) => {
+  console.log(req.body); 
   Data.find((err, data) => {
     if (err) return res.json({ success: false, error: err });
     return res.json({ success: true, data: data });
@@ -71,7 +72,7 @@ router.delete("/deleteData", (req, res) => {
 router.post("/putData", (req, res) => {
   let data = new Data();
 
-  const { id, message } = req.body;
+  const { id, message, user } = req.body;
 
   /*if ((!id && id !== 0) || !message) {
     */
@@ -83,6 +84,7 @@ router.post("/putData", (req, res) => {
   }
   data.message = message;
   data.id = id;
+  data.user = user; 
   data.save(err => {
     if (err) return res.json({ success: false, error: err });
     return res.json({ success: true });
